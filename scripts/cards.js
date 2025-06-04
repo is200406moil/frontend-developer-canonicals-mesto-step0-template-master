@@ -1,3 +1,9 @@
+/**
+ * Массив с начальными карточками
+ * Каждая карточка содержит:
+ * @property {string} name - Название места
+ * @property {string} link - URL изображения места
+ */
 const initialCards = [
     {
       name: "Архыз",
