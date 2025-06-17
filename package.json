@@ -7,6 +7,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.13",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-loader": "^7.0.1",
@@ -15,7 +16,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "name": "mesto-project",
-  "description": "Название: Проект с использованием адаптивной верстки \"Mesto\"\r Описание: В проекте можно будет в будущем делится фотографиями\r Используемые технологии: HTML,CSS(Grid,Flex),Git,Figma",
+  "description": "Проект Mesto - интерактивная страница для обмена фотографиями с использованием адаптивной верстки, JavaScript и Webpack",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
@@ -23,16 +24,17 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tiltozavrik/mesto-project.git"
+    "url": "git+https://github.com/is200406moil/mesto-project.git"
   },
-  "author": "",
+  "author": "is200406moil",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tiltozavrik/mesto-project/issues"
+    "url": "https://github.com/is200406moil/mesto-project/issues"
   },
-  "homepage": "https://github.com/tiltozavrik/mesto-project#readme"
+  "homepage": "https://is200406moil.github.io/mesto-project"
 }
