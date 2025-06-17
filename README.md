@@ -31,4 +31,4 @@ git clone git@github.com:is200406moil/frontend-developer-canonicals-mesto-step0-
 - Галерея фотографий
 
 ## GitHub Pages
-[Открыть сайт на GitHub Pages](https://is200406moil.github.io/frontend-developer-canonicals-mesto-step0-template-master/)
+[Открыть сайт на GitHub Pages](https://is200406moil.github.io/mesto-project)
