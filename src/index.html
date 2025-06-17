@@ -1,87 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mesto</title>
 </head>
 <body class="page">
-<div class="page__content">
-  <header class="header page__section">
-    <img src="./images/logo.svg" alt="Логотип проекта масто" class="logo header__logo">
-  </header>
-  <main class="content">
-    <section class="profile page__section">
-      <div class="profile__image" style="background-image: url('./images/avatar.jpg');"></div>
-      <div class="profile__info">
-        <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__edit-button" type="button"></button>
-        <p class="profile__description">Исследователь океана</p>
-      </div>
-      <button class="profile__add-button" type="button"></button>
+<header class="header">
+    <a href="#"
+    ><img
+            class="header__logo"
+            src="<%=require('./images/header-logo.svg')%>"
+            alt="Логотип Mesto"
+    /></a>
+</header>
+<main class="content">
+    <section class="profile">
+        <div class="profile__avatar-container">
+        <img
+                class="profile__avatar"
+                src=""
+                alt=""
+        />
+        </div>
+        <div class="profile__info">
+            <h1 class="profile__name"></h1>
+            <p class="profile__description"></p>
+            <button type="button" class="profile__button-edit"></button>
+        </div>
+        <button type="button" class="profile__button-add"></button>
     </section>
-    <section class="places page__section">
-      <ul class="places__list" type="button" id="my-button">
-      
-
-
-      </ul>
+    <section class="elements">
+        <ul class="element"></ul>
     </section>
-  </main>
-  <footer class="footer page__section">
-    <p class="footer__copyright">
-      © 2021 Mesto Russia
-    </p>
-  </footer>
-  <div class="popup popup_type_edit">
-    <div class="popup__content">
-      <button type="button" class="popup__close"></button>
-      <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form" name="edit-profile">
-        <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя" required>
-        <input type="text" name="description" class="popup__input popup__input_type_description" placeholder="Занятие" required>
-        <button type="submit" class="button popup__button">Сохранить</button>
-      </form>
+</main>
+<footer class="footer">
+    <p class="footer__copyright">© 2022 Mesto Russia</p>
+</footer>
+<div class="popup" id="popup_edit-profile">
+    <div class="popup__body">
+        <div class="popup__content">
+            <button type="button" class="popup__button-close" id="buttonCloseEdit"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form" name="popup-form-edit" id="popup__form_edit" action="#" novalidate>
+                <fieldset class="popup__form-set popup__form-set_active">
+                    <label class="popup__form-field">
+                <input
+                        class="popup__input"
+                        id="name-input"
+                        name="name"
+                        placeholder="Имя"
+                        type="text"
+                        required
+                        minlength="2"
+                        maxlength="40"
+                        pattern="^[A-Za-zА-Яа-яЁё\-\s]+$"
+                        data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+                />
+                        <span class="popup__input-error name-input-error"></span>
+                    </label>
+                    <label class="popup__form-field">
+                <input
+                        class="popup__input"
+                        id="description-input"
+                        name="description"
+                        type="text"
+                        placeholder="Описание"
+                        minlength="2"
+                        maxlength="200"
+                        pattern="^[A-Za-zА-Яа-яЁё\-\s]+$"
+                        data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+                        required
+                />
+                        <span class="popup__input-error description-input-error"></span>
+                    </label>
+                <button type="submit" class="popup__button-save" id="button-save" data-onload="Сохранение..." data-default="Сохранить" disabled>Сохранить</button>
+                </fieldset>
+            </form>
+        </div>
     </div>
-  </div>
-  <div class="popup popup_type_new-card">
-    <div class="popup__content">
-      <button type="button" class="popup__close"></button>
-      <h3 class="popup__title">Новое место</h3>
-      <form class="popup__form" name="new-place">
-        <input type="text" name="place-name" class="popup__input popup__input_type_card-name" placeholder="Название" required>
-        <input type="url" name="link" class="popup__input popup__input_type_url" placeholder="Ссылка на картинку" required>
-        <button type="submit" class="button popup__button">Сохранить</button>
-      </form>
-    </div>
-  </div>
-  <div class="popup popup_type_image">
-    <div class="popup__content popup__content_content_image">
-      <button type="button" class="popup__close"></button>
-      <img src="" alt="" class="popup__image">
-      <p class="popup__caption"></p>
-    </div>
-  </div>
 </div>
-
-
-<template id="card-template">
-  <li class="places__item card">
-    <img class="card__image" src="" alt="" />
-    <button type="button" class="card__delete-button"></button>
-    <div class="card__description">
-      <p class="card__title">
-      </p>
-      <button type="button" class="card__like-button"></button>
+<div class="popup" id="popup_add-element">
+    <div class="popup__body">
+        <div class="popup__content">
+            <button type="button" class="popup__button-close" id="buttonCloseAdd"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="popup-form-add" id="popup__form_add" action="#" novalidate>
+                <fieldset class="popup__form-set">
+                    <label class="popup__form-field">
+                <input
+                        class="popup__input"
+                        id="nameImage-input"
+                        name="nameImage"
+                        placeholder="Название"
+                        type="text"
+                        minlength="2"
+                        maxlength="30"
+                        pattern="^[A-Za-zА-Яа-яЁё\-\s]+$"
+                        data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+                        required
+                />
+                        <span class="popup__input-error nameImage-input-error"></span>
+                    </label>
+                    <label class="popup__form-field">
+                <input
+                        class="popup__input"
+                        id="link-input"
+                        name="link"
+                        placeholder="Ссылка на картинку"
+                        type="url"
+                        required
+                />
+                        <span class="popup__input-error link-input-error"></span>
+                    </label>
+                <button type="submit" class="popup__button-save popup__button-save_disabled" id="button-create" data-onload="Сохранение..." data-default="Создать" disabled>Создать</button>
+                </fieldset>
+            </form>
+        </div>
     </div>
-  </li>
+</div>
+<div class="popup popup_fullscreen">
+    <div class="popup__content-fullscreen">
+            <button type="button" class="popup__button-close" id="buttonCloseFullscreenImage"></button>
+                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg" alt="Архыз" class="popup__fullscreen-image">
+                <p class="popup__fullscreen-caption">Челябинская область</p>
+
+    </div>
+</div>
+<template id="elements-template">
+    <li class="element__item">
+        <img class="element__image" alt='' src=''>
+        <button type="button" class="element__button-trash"></button>
+        <div class="element__info">
+            <h2 class="element__name"></h2>
+            <div class="element__button-like-container">
+            <button type="button" class="element__button-like"></button>
+                <span class="element__button-like-count"></span>
+            </div>
+        </div>
+    </li>
 </template>
-
-<script src="./components/cards.js"></script>
-<script src="./components/index.js"></script>
-
+<div class="popup" id="popup_change-avatar">
+    <div class="popup__body">
+        <div class="popup__content">
+            <button type="button" class="popup__button-close" id="buttonCloseAvatar"></button>
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form class="popup__form" name="popup-form-add" id="popup__form_avatar" action="#" novalidate>
+                <fieldset class="popup__form-set">
+                    <label class="popup__form-field">
+                        <input
+                                class="popup__input"
+                                id="avatar-input"
+                                name="link"
+                                placeholder="Ссылка на аватар"
+                                type="url"
+                                required
+                        />
+                        <span class="popup__input-error avatar-input-error"></span>
+                    </label>
+                    <button type="submit" class="popup__button-save popup__button-save_disabled" id="button-save-avatar" data-onload="Сохранение..." data-default="Сохранить" disabled>Создать</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+

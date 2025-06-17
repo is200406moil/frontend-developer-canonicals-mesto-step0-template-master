@@ -1,0 +1,8 @@
+.popup__fullscreen-caption {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #FFFFFF;
+    margin: 10px 0 0;
+}

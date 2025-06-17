@@ -1,22 +1,17 @@
-@import url('./__description/profile__description.css');
-@import url('./__add-button/profile__add-button.css');
-@import url('./__edit-button/profile__edit-button.css');
-@import url('./__info/profile__info.css');
-@import url('./__title/profile__title.css');
-@import url('./__image/profile__image.css');
-
 .profile {
-  font-family: 'Inter', Arial, sans-serif;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 36px 0;
+    max-width: 880px;
+    margin: 0;
+    display: grid;
+    grid-template-areas: "photo info . add";
+    grid-template-columns: 120px 366px auto 150px;
+    align-items: center;
 }
 
-@media screen and (max-width: 480px) {
-  .profile {
-    padding: 43px 0;
-    flex-direction: column;
-    text-align: center;
+@media screen and (max-width: 767px) {
+    .profile {
+      display: flex;
+      flex-direction: column;
+      margin:0 auto;
+      max-width: 282px;
+    }
   }
-}
