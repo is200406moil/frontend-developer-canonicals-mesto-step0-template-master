@@ -9,7 +9,7 @@
 - **Стек технологий:** HTML, CSS, JavaScript
 
 ## Репозиторий
-- **GitHub:** [frontend-developer-canonicals-mesto-step0-template-master](https://github.com/is200406moil/frontend-developer-canonicals-mesto-step0-template-master)
+- **GitHub:** [mesto-project](https://github.com/is200406moil/mesto-project)
 
 ## Структура проекта
 - `index.html` - главная страница проекта
@@ -31,4 +31,4 @@ git clone git@github.com:is200406moil/frontend-developer-canonicals-mesto-step0-
 - Галерея фотографий
 
 ## GitHub Pages
-[Открыть сайт на GitHub Pages](https://is200406moil.github.io/frontend-developer-canonicals-mesto-step0-template-master/)
+[Открыть сайт на GitHub Pages](https://is200406moil.github.io/mesto-project)
